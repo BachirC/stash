@@ -19,8 +19,15 @@
         #
         # You can give explicit globs or simply directories.
         # In the latter case `**/*.{ex,exs}` will be used.
-        included: ["lib/", "src/", "apps/"],
-        excluded: [~r"/_build/", ~r"/deps/", "lib/stash.ex"]
+        included: ["lib/", "src/", "apps/", "web/"],
+        excluded: [
+          ~r"/_build/",
+          ~r"/deps/",
+          "lib/stash.ex",
+          "web/channels/user_socket.ex",
+          "web/views/error_helpers.ex",
+          "web/views/error_view.ex"
+        ]
       },
       #
       # If you create your own checks, you must specify the source files for
@@ -74,7 +81,7 @@
 
         {Credo.Check.Readability.FunctionNames},
         {Credo.Check.Readability.LargeNumbers},
-        {Credo.Check.Readability.MaxLineLength, priority: :low, max_length: 80},
+        {Credo.Check.Readability.MaxLineLength, priority: :low, max_length: 90},
         {Credo.Check.Readability.ModuleAttributeNames},
         {Credo.Check.Readability.ModuleDoc},
         {Credo.Check.Readability.ModuleNames},
