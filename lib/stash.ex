@@ -1,4 +1,7 @@
 defmodule Stash do
+  @moduledoc """
+  Entry point of the application. Handles all initialization steps.
+  """
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
