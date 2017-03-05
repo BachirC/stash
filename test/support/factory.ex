@@ -3,6 +3,9 @@ defmodule Stash.Factory do
 
   def post_factory do
     %Stash.Post{
+      title: "Building and testing a Phoenix JSON API",
+      source: "https://robots.thoughtbot.com/building-a-phoenix-json-api",
+      origin: "https://robots.thoughtbot.com"
     }
   end
 end

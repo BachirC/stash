@@ -28,6 +28,8 @@ defmodule Stash.ConnCase do
       import Ecto.Query
 
       import Stash.Router.Helpers
+      import Stash.Factory
+      import Stash.ConnCaseHelper
 
       # The default endpoint for testing
       @endpoint Stash.Endpoint
