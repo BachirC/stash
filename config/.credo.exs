@@ -22,7 +22,8 @@
         included: ["lib/", "src/", "web/", "apps/"],
         excluded: [
           ~r"/_build/",
-          ~r"/deps/"
+          ~r"/deps/",
+          "mix.lock"
         ]
       },
       #
