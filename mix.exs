@@ -2,7 +2,8 @@ defmodule Stash.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :stash,
+   [
+     app: :stash,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -10,7 +11,10 @@ defmodule Stash.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
-     deps: deps()]
+     deps: deps(),
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test]
+   ]
   end
 
   # Configuration for the OTP application.
@@ -40,7 +44,8 @@ defmodule Stash.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ex_machina, "~> 1.0", only: :test},
-      {:credo, "~> 0.6.1", only: [:dev, :test]}
+      {:credo, "~> 0.6.1", only: [:dev, :test]},
+      {:excoveralls, "~> 0.6", only: :test}
    ]
   end
 
